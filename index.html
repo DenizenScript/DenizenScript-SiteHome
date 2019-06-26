@@ -1,104 +1,280 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Denizen Script - Links Directory</title>
-<style>
-body {
-	background-color: #C0E0F0;
-}
-.linksection {
-	display: inline-block;
-	border: 5px solid #010101;
-	padding: 10px;
-}
-.linkbox {
-	display: inline-block;
-	border: 5px solid #404040;
-	padding: 10px;
-	width: 275px;
-}
-.titlebar {
-	font-size: 200%;
-	font-weight: bold;
-}
-.subtitlebar {
-	font-size: 150%;
-	font-weight: bold;
-}
-.spacer {
-	height: 20px;
-}
-.linkimage {
-	width: 200px;
-	height: 200px;
-}
-</style>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Denizen Script - Links Directory</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<style>
+	body {
+		padding-top: 40px;
+	}
+	.link_image {
+		height: 200px;
+		width: 200px;
+	}
+	.flash {
+		animation: flash 1s ease-out;
+		animation-iteration-count: 1;
+	}
+	@keyframes flash {
+		0% { background-color: transparent; }
+		20% { background-color: #88BBFF; }
+		100% { background-color: transparent; }
+	}
+	.offset_up {
+		position: relative;
+		bottom: 50px;
+	}
+	</style>
+	<script>
+	function flashElement(elementName) {
+		var element = document.getElementById(elementName);
+		element.classList.add("flash");
+		setTimeout(function() { element.classList.remove("flash"); }, 1100);
+	}
+	</script>
 </head>
 <body>
-<center>
-	<span class="subtitlebar">Web design is hard!</span>
-	<br>
-	<span class="titlebar">Welcome to Denizen Script's new website! A list of relevant links is available below:</span>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	<div class="linksection">
-		<span class="subtitlebar">Links related to Denizen in general...</span>
-		<br>
-		<div class="linkbox">Looking for the Denizen forums?<br><img class="linkimage" src="/images/denizen_forum.png"/><br>Visit <a href="https://forum.denizenscript.com/">forum.denizenscript.com</a></div>
-		<div class="linkbox">Looking for the Denizen Discord guild?<br><img class="linkimage" src="/images/denizen_discord.png"/><br>Visit <a href="https://discord.gg/Q6pZGSR">discord.gg/Q6pZGSR</a></div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+		<a class="navbar-brand" href="#top">Denizen Script</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="smooth-scroll navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#general" onclick="javascript:flashElement('card_general');">General</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#d1official" onclick="javascript:flashElement('card_d1official');">D1 Official</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#d1related" onclick="javascript:flashElement('card_d1related');">D1 Related</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#d2official" onclick="javascript:flashElement('card_d2official');">D2 Official</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#d2related" onclick="javascript:flashElement('card_d2related');">D2 Related</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="jumbotron text-center">
+		<a class="offset_up" id="top"></a><h1>Welcome to Denizen Script's new website!</h1>
+		<p class="lead">A list of relevant links is available below.</p>
 	</div>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	<div class="linksection">
-		<span class="subtitlebar">Links to official resources for Denizen 1.x.x (for Bukkit/Spigot)...</span>
-		<br>
-		<div class="linkbox">Looking for the Denizen-Bukkit meta docs?<br><img class="linkimage" src="/images/denizen_1_docs.png"/><br>Visit <a href="https://one.denizenscript.com/denizen/logs">one.denizenscript.com/denizen/logs</a></div>
-		<div class="linkbox">Looking for the Denizen-Bukkit release builds?<br><img class="linkimage" src="/images/denizen_1_rel_ci.png"/><br>Visit <a href="http://ci.citizensnpcs.co/job/Denizen">ci.citizensnpcs.co/job/Denizen</a></div>
-		<div class="linkbox">Looking for the Denizen-Bukkit developmental builds?<br><img class="linkimage" src="/images/denizen_1_dev_ci.png"/><br>Visit <a href="http://ci.citizensnpcs.co/job/Denizen_Developmental">ci.citizensnpcs.co/job/Denizen_Developmental</a></div>
-		<div class="linkbox">Looking for the Denizen-Bukkit Spigot page?<br><img class="linkimage" src="/images/denizen_spigot.png"/><br>Visit <a href="https://www.spigotmc.org/resources/denizen.21039/">www.spigotmc.org/resources/denizen.21039/</a></div>
-		<div class="linkbox">Looking for the Denizen-Bukkit GitHub issues page?<br><img class="linkimage" src="/images/denizen_1_issues.png"/><br>Visit <a href="https://github.com/DenizenScript/Denizen-For-Bukkit/issues">github.com/DenizenScript/Denizen-For-Bukkit/issues</a></div>
+	<div class="container body-content">
+		<div class="card mb-3" id="card_general">
+			<a class="offset_up" id="general"></a><h3 class="card-header"><span class="text-muted">Links related to</span> Denizen in general<span class="text-muted">...</span></h3>
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Denizen Forums</h5>
+					<h6 class="card-subtitle text-muted mb-3">Official Denizen Forums.</h6>
+					<a class="card-link" href="https://forum.denizenscript.com">
+						<img class="link_image" src="/images/denizen_forum.png">
+						<br />forum.denizenscript.com
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Denizen Discord</h5>
+					<h6 class="card-subtitle text-muted mb-3">Official Denizen Discord guild. Super active and helpful!</h6>
+					<a class="card-link" href="https://discord.gg/Q6pZGSR">
+						<img class="link_image" src="/images/denizen_discord.png">
+						<br />discord.gg/Q6pZGSR
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- End general, begin D1 -->
+		<div class="card mb-3" id="card_d1official">
+			<a class="offset_up" id="d1official"></a><h3 class="card-header"><span class="text-muted">Links to </span>official resources <span class="text-muted">for</span> Denizen 1.x (on Bukkit/Spigot)<span class="text-muted">...</span></h3>
+			<div class="card-body row">
+				<div class="col-4 text-center border-right">
+					<h5 class="card-title">Denizen-Bukkit Meta Docs</h5>
+					<h6 class="card-subtitle text-muted mb-3">Full Denizen 1.x documentation and tutorials.</h6>
+					<a class="card-link" href="https://one.denizenscript.com/denizen/logs">
+						<img class="link_image" src="/images/denizen_1_docs.png">
+						<br />one.denizenscript.com/denizen/logs
+					</a>
+				</div>
+				<div class="col-4 text-center border-right">
+					<h5 class="card-title">Denizen-Bukkit Release Builds</h5>
+					<h6 class="card-subtitle text-muted mb-3">Generally stable for long-term use.</h6>
+					<a class="card-link" href="http://ci.citizensnpcs.co/job/Denizen">
+						<img class="link_image" src="/images/denizen_1_rel_ci.png">
+						<br />ci.citizensnpcs.co/job/Denizen
+					</a>
+				</div>
+				<div class="col-4 text-center">
+					<h5 class="card-title">Denizen-Bukkit Dev Builds</h5>
+					<h6 class="card-subtitle text-muted mb-3">Cutting edge and sometimes unstable features.</h6>
+					<a class="card-link" href="http://ci.citizensnpcs.co/job/Denizen_Developmental">
+						<img class="link_image" src="/images/denizen_1_dev_ci.png">
+						<br />ci.citizensnpcs.co/job/Denizen_Developmental
+					</a>
+				</div>
+			</div>
+			<hr />
+			<div class="card-body row">
+				<div class="col-4 text-center border-right">
+					<h5 class="card-title">Denizen-Bukkit Spigot Page</h5>
+					<h6 class="card-subtitle text-muted mb-3">Discuss or review Denizen on Spigot.</h6>
+					<a class="card-link" href="https://www.spigotmc.org/resources/denizen.21039/">
+						<img class="link_image" src="/images/denizen_spigot.png">
+						<br />www.spigotmc.org/resources/denizen.21039/
+					</a>
+				</div>
+                                <div class="col-4 text-center border-right">
+                                        <h5 class="card-title">Denizen-Bukkit Beginner's Guide</h5>
+                                        <h6 class="card-subtitle text-muted mb-3">A guide for new Denizen-Bukkit users.</h6>
+                                        <a class="card-link" href="https://docs.denizenscript.com/">
+                                                <img class="link_image" src="/images/denizen_docs.png">
+                                                <br />docs.denizenscript.com/
+                                        </a>
+                                </div>
+				<div class="col-4 text-center">
+					<h5 class="card-title">Denizen-Bukkit GitHub Issues Page</h5>
+					<h6 class="card-subtitle text-muted mb-3">Post any issues using Denizen 1.x here.</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Denizen-For-Bukkit/issues">
+						<img class="link_image" src="/images/denizen_1_issues.png">
+						<br />github.com/DenizenScript/Denizen-For-Bukkit/issues
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3" id="card_d1related">
+			<a class="offset_up" id="d1related"></a><h3 class="card-header"><span class="text-muted">Links to </span>projects related <span class="text-muted">to</span> Denizen 1.x (on Bukkit/Spigot)<span class="text-muted">...</span></h3>
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Depenizen</h5>
+					<h6 class="card-subtitle text-muted mb-3">Semi-official addon that helps you integrate a variety of other popular plugins into your Denizen scripts!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Depenizen">
+						<img class="link_image" src="/images/depenizen_bukkit.png">
+						<br />github.com/DenizenScript/Depenizen
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Webizen</h5>
+					<h6 class="card-subtitle text-muted mb-3">An official addon that lets you host a small web server from your Denizen-enabled Minecraft server!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Webizen">
+						<img class="link_image" src="/images/webizen_1.png">
+						<br />github.com/DenizenScript/Webizen
+					</a>
+				</div>
+			</div>
+			<hr />
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">dDiscordBot</h5>
+					<h6 class="card-subtitle text-muted mb-3">Have a Discord guild for your Minecraft server? You can control a Discord bot through Denizen scripts!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/dDiscordBot">
+						<img class="link_image" src="/images/ddiscordbot_1.png">
+						<br />github.com/DenizenScript/dDiscordBot
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">dIRCBot</h5>
+					<h6 class="card-subtitle text-muted mb-3">Still use IRC? You can control an IRC bot through Denizen scripts too!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/dIRCBot">
+						<img class="link_image" src="/images/dircbot_1.png">
+						<br />github.com/DenizenScript/dIRCBot
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- End D1, begin D2 -->
+		<div class="card mb-3" id="card_d2official">
+			<a class="offset_up" id="d2official"></a><h3 class="card-header"><span class="text-muted">Links to </span>official resources <span class="text-muted">for</span> Denizen 2.x (on Sponge)<span class="text-muted">...</span></h3>
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Denizen2Sponge Meta Docs</h5>
+					<h6 class="card-subtitle text-muted mb-3">Full Denizen 2.x documentation and tutorials.</h6>
+					<a class="card-link" href="https://meta.denizenscript.com">
+						<img class="link_image" src="/images/denizen_2_docs.png">
+						<br />meta.denizenscript.com
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Denizen2Sponge Builds</h5>
+					<h6 class="card-subtitle text-muted mb-3">Download the plugin here.</h6>
+					<a class="card-link" href="http://ci.citizensnpcs.co/job/Denizen2Sponge">
+						<img class="link_image" src="/images/denizen_2_ci.png">
+						<br />ci.citizensnpcs.co/job/Denizen2Sponge
+					</a>
+				</div>
+			</div>
+			<hr />
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Denizen2 topic on the Sponge Forums</h5>
+					<h6 class="card-subtitle text-muted mb-3">Discuss the plugin with other Sponge users.</h6>
+					<a class="card-link" href="https://forums.spongepowered.org/t/denizen2-scripting-engine/17275">
+						<img class="link_image" src="/images/denizen_sponge_forum.png">
+						<br />forums.spongepowered.org/t/denizen2-scripting-engine/17275
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Denizen2Sponge GitHub Issues Page</h5>
+					<h6 class="card-subtitle text-muted mb-3">Post any issues using Denizen 2.x here.</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Denizen2Sponge/issues">
+						<img class="link_image" src="/images/denizen_1_issues.png">
+						<br />github.com/DenizenScript/Denizen2Sponge/issues
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3" id="card_d2related">
+			<a class="offset_up" id="d2related"></a><h3 class="card-header"><span class="text-muted">Links to </span>projects related <span class="text-muted">to</span> Denizen 2.x (on Sponge)<span class="text-muted">...</span></h3>
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Denizen2IDE</h5>
+					<h6 class="card-subtitle text-muted mb-3">An official and carefully crafted editor to maximize your scripting speed!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Denizen2IDE">
+						<img class="link_image" src="/images/d2ide.png">
+						<br />github.com/DenizenScript/Denizen2IDE
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Depenizen</h5>
+					<h6 class="card-subtitle text-muted mb-3">Semi-official addon that helps you integrate a variety of other popular plugins into your Denizen scripts!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Depenizen">
+						<img class="link_image" src="/images/depenizen_sponge.png">
+						<br />github.com/DenizenScript/Depenizen
+					</a>
+				</div>
+			</div>
+			<hr />
+			<div class="card-body row">
+				<div class="col-6 text-center border-right">
+					<h5 class="card-title">Webizen2</h5>
+					<h6 class="card-subtitle text-muted mb-3">An official addon that lets you host a small web server from your Denizen-enabled Minecraft server!</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Webizen2">
+						<img class="link_image" src="/images/webizen_2.png">
+						<br />github.com/DenizenScript/Webizen2
+					</a>
+				</div>
+				<div class="col-6 text-center">
+					<h5 class="card-title">Clientizen</h5>
+					<h6 class="card-subtitle text-muted mb-3">Clientizen is an official secondary implementation of Denizen2 that runs on the Minecraft client! It can interact with both Sponge and Spigot servers (using Depenizen).</h6>
+					<a class="card-link" href="https://github.com/DenizenScript/Clientizen">
+						<img class="link_image" src="/images/clientizen.png">
+						<br />github.com/DenizenScript/Clientizen
+					</a>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<footer>
+			<div class="text-center">
+				<p>
+					Website built by Morphan1 and mcmonkey.
+					<br />Made using the <a href="https://bootswatch.com/litera/">Litera Bootstrap Theme</a> by Thomas Park, which was released under the <a href="https://github.com/thomaspark/bootswatch/blob/7fcf822114e71cfb3b89e98afb58055d21f5e240/LICENSE">MIT License</a>.
+					<br />Copyright (C) 2018 The Denizen Script Team, All Rights Reserved.
+				</p>
+			</div>
+		</footer>
 	</div>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	<div class="linksection">
-		<span class="subtitlebar">Links to projects related to Denizen 1.x.x (for Bukkit/Spigot)...</span>
-		<br>
-		<div class="linkbox">Depenizen helps you integrate a variety of other plugins into your Denizen scripts!<br><img class="linkimage" src="/images/depenizen_bukkit.png"/><br>Visit <a href="https://github.com/DenizenScript/Depenizen">github.com/DenizenScript/Depenizen</a></div>
-		<div class="linkbox">Webizen lets you host a small web server from your Denizen-enabled minecraft server!<br><img class="linkimage" src="/images/webizen_1.png"/><br>Visit <a href="https://github.com/DenizenScript/Webizen">github.com/DenizenScript/Webizen</a></div>
-		<div class="linkbox">dDiscordBot - Have a Discord guild for your Minecraft server? You can control a Discord bot through Denizen scripts!<br><img class="linkimage" src="/images/ddiscordbot_1.png"/><br>Visit <a href="https://github.com/DenizenScript/dDiscordBot">github.com/DenizenScript/dDiscordBot</a></div>
-		<div class="linkbox">dIRCBot - Still use IRC? You can control an IRC bot through Denizen scripts!<br><img class="linkimage" src="/images/dircbot_1.png"/><br>Visit <a href="https://github.com/DenizenScript/dIRCBot">github.com/DenizenScript/dIRCBot</a></div>
-	</div>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	<div class="linksection">
-		<span class="subtitlebar">Links to official resources for Denizen 2.x.x (for Sponge)...</span>
-		<br>
-		<div class="linkbox">Looking for the Denizen2Sponge meta docs?<br><img class="linkimage" src="/images/denizen_2_docs.png"/><br>Visit <a href="http://meta.denizenscript.com">meta.denizenscript.com</a></div>
-		<div class="linkbox">Looking for Denizen2Sponge builds?<br><img class="linkimage" src="/images/denizen_2_ci.png"/><br>Visit <a href="http://ci.citizensnpcs.co/job/Denizen2Sponge">ci.citizensnpcs.co/job/Denizen2Sponge</a></div>
-		<div class="linkbox">Looking for the Denizen2Sponge forum page on the Sponge Forums?<br><img class="linkimage" src="/images/denizen_sponge_forum.png"/><br>Visit <a href="https://forums.spongepowered.org/t/denizen2-scripting-engine/17275">forums.spongepowered.org/t/denizen2-scripting-engine/17275</a></div>
-		<div class="linkbox">Looking for the Denizen2Sponge GitHub issues page?<br><img class="linkimage" src="/images/denizen_2_issues.png"/><br>Visit <a href="https://github.com/DenizenScript/Denizen2Sponge/issues">github.com/DenizenScript/Denizen2Sponge/issues</a></div>
-	</div>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	<div class="linksection">
-		<span class="subtitlebar">Links to projects related to Denizen 2.x.x (for Sponge)...</span>
-		<br>
-		<div class="linkbox">Denizen2IDE - a carefully crafted editor to maximize your scripting speed!<br><img class="linkimage" src="/images/d2ide.png"/><br>Visit <a href="https://github.com/DenizenScript/Denizen2IDE">github.com/DenizenScript/Denizen2IDE</a></div>
-		<div class="linkbox">Depenizen helps you integrate a variety of other plugins into your Denizen scripts!<br><img class="linkimage" src="/images/depenizen_sponge.png"/><br>Visit <a href="https://github.com/DenizenScript/Depenizen">github.com/DenizenScript/Depenizen</a></div>
-		<div class="linkbox">Webizen2 lets you host a small web server from your Denizen2-enabled minecraft server!<br><img class="linkimage" src="/images/webizen_2.png"/><br>Visit <a href="https://github.com/DenizenScript/Webizen2">github.com/DenizenScript/Webizen2</a></div>
-		<div class="linkbox">Clientizen lets you run Denizen2 scripts on the minecraft client! Can interact with both Sponge and Spigot servers (through Depenizen).<br><img class="linkimage" src="/images/clientizen.png"/><br>Visit <a href="https://github.com/DenizenScript/Clientizen">github.com/DenizenScript/Clientizen</a></div>
-	</div>
-	<br>
-	<div class="spacer"></div>
-	<br>
-	Website unfortunately created by mcmonkey.
-	<br>
-	Copyright (C) 2018 The Denizen Script Team, All Rights Reserved.
-</center>
 </body>
 </html>
