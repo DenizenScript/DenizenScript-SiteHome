@@ -7,7 +7,13 @@ The source files for https://denizenscript.com/
 
 Copyright (C) 2017-2019 The Denizen Script Team, All Rights Reserved.
 
-### Current License
+### Non-Software License
+
+[![Creative Commons License CC-BY-NC-SA 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+The (non-software) writing in this repo is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+### Software License
 
 The MIT License (MIT)
 
